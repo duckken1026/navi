@@ -94,31 +94,14 @@ for Autonomous Driving</title>
           <h1 class="title is-1 publication-title">自動駕駛鳥瞰視角增強軌跡預測</h1>
 
           <div class="is-size-5 publication-authors">
-            <span class="author-block">
-              <a href="https://keunhong.com">Keunhong Park</a><sup>1</sup>,</span>
-            <span class="author-block">
-              <a href="https://utkarshsinha.com">Utkarsh Sinha</a><sup>2</sup>,</span>
-            <span class="author-block">
-              <a href="https://jonbarron.info">Jonathan T. Barron</a><sup>2</sup>,
-            </span>
-            <span class="author-block">
-              <a href="http://sofienbouaziz.com">Sofien Bouaziz</a><sup>2</sup>,
-            </span>
-            <span class="author-block">
-              <a href="https://www.danbgoldman.com">Dan B Goldman</a><sup>2</sup>,
-            </span>
-            <span class="author-block">
-              <a href="https://homes.cs.washington.edu/~seitz/">Steven M. Seitz</a><sup>1,2</sup>,
-            </span>
-            <span class="author-block">
-              <a href="http://www.ricardomartinbrualla.com">Ricardo Martin-Brualla</a><sup>2</sup>
-            </span>
+            <a href="https://keunhong.com">ZHENG,CHUAN-XIU</a><sup>1</sup>
           </div>
 
           <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>1</sup>University of Washington,</span>
-            <span class="author-block"><sup>2</sup>Google Research</span>
+            <span class="author-block"><sup>1</sup>Department of Computer Science and Information Engineering <br> National Taipei University of Technology</span>
+           <!-- <span class="author-block"><sup>2</sup>Google Research</span> -->
           </div>
+
 
           <div class="column has-text-centered">
             <div class="publication-links">
@@ -184,71 +167,14 @@ for Autonomous Driving</title>
     <div class="hero-body">
       <img src="image.png" alt="照片描述" width="100%">
       <h2 class="subtitle has-text-centered">
-        <span class="dnerf">Nerfies</span> turns selfie videos from your phone into
-        free-viewpoint
-        portraits.
+        <span class="dnerf">Fig. 1:</span>
+        Trajectory prediction for autonomous driving models
       </h2>
     </div>
   </div>
 </section>
 
 
-<section class="hero is-light is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-steve">
-          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/steve.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-chair-tp">
-          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/chair-tp.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-shiba">
-          <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/shiba.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-fullbody">
-          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/fullbody.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-blueshirt">
-          <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/blueshirt.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-mask">
-          <video poster="" id="mask" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/mask.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-coffee">
-          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/coffee.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-toby">
-          <video poster="" id="toby" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/toby2.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
 
 <section class="section">
@@ -259,37 +185,52 @@ for Autonomous Driving</title>
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            We present the first method capable of photorealistically reconstructing a non-rigidly
-            deforming scene using photos/videos captured casually from mobile phones.
+            Traditional trajectory prediction models often suffer from reduced accuracy in
+            complex urban environments due to their reliance on sequential images. To ad-
+            dress this issue, this study replaces the previous-frame image with a BEV image
+            generated from the navigation route, providing richer global spatial and naviga
+            tion information. A BEV image generation pipeline is proposed, where noisy GPS
+            trajectories are aligned to OSM road centerlines through map matching and opti
+            mization. The proposed method is evaluated on the nuScenes dataset using a CNN
+            for feature extraction and a GRU to model temporal driving dynamics, followed
+            by multi-trajectory prediction. By integrating BEV navigation information with vi
+            sual features, the proposed approach improves trajectory prediction robustness and
+            enhances path planning performance for autonomous driving systems.
+
           </p>
-          <p>
-            Our approach augments neural radiance fields
-            (NeRF) by optimizing an
-            additional continuous volumetric deformation field that warps each observed point into a
-            canonical 5D NeRF.
-            We observe that these NeRF-like deformation fields are prone to local minima, and
-            propose a coarse-to-fine optimization method for coordinate-based models that allows for
-            more robust optimization.
-            By adapting principles from geometry processing and physical simulation to NeRF-like
-            models, we propose an elastic regularization of the deformation field that further
-            improves robustness.
-          </p>
-          <p>
-            We show that <span class="dnerf">Nerfies</span> can turn casually captured selfie
-            photos/videos into deformable NeRF
-            models that allow for photorealistic renderings of the subject from arbitrary
-            viewpoints, which we dub <i>"nerfies"</i>. We evaluate our method by collecting data
-            using a
-            rig with two mobile phones that take time-synchronized photos, yielding train/validation
-            images of the same pose at different viewpoints. We show that our method faithfully
-            reconstructs non-rigidly deforming scenes and reproduces unseen views with high
-            fidelity.
-          </p>
+          
         </div>
       </div>
     </div>
     <!--/ Abstract. -->
 
+    <section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns is-centered is-vcentered">
+        
+        <div class="column is-6">
+          <div class="item item-steve has-text-centered">
+            <img src="./image1.png" style="max-width: 100%; height: auto; margin: 0 auto; display: block;">
+            <h2 class="subtitle has-text-centered" style="margin-top: 10px;">
+              <span class="dnerf">Fig. 2:</span> Supercombo pipeline. 
+            </h2>
+          </div>
+        </div>
+
+        <div class="column is-8">
+          <div class="item item-chair-tp has-text-centered">
+            <img src="./image2.png" style="max-width: 100%; height: auto; margin: 0 auto; display: block;">
+            <h2 class="subtitle has-text-centered" style="margin-top: 10px;">
+              <span class="dnerf">Fig. 3:</span> OP-deepdive pipeline.
+            </h2>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
     <!-- Paper video. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
@@ -303,6 +244,18 @@ for Autonomous Driving</title>
     <!--/ Paper video. -->
   </div>
 </section>
+
+<div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Method</h2>
+        <div class="content has-text-justified">
+          <p>
+          To incorporate BEV map information, while the industry standard uses high-precision equipment at high cost, we opted to use publicly available route information from OpenStreetMap to avoid increasing costs.
+          Input the BEV graphic into the model and observe whether training the model improves its trajectory prediction performance.
+          </p>
+        </div>
+      </div>
+    </div>
 
 
 <section class="section">
@@ -445,12 +398,60 @@ for Autonomous Driving</title>
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@article{park2021nerfies,
-  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
-  title     = {Nerfies: Deformable Neural Radiance Fields},
-  journal   = {ICCV},
-  year      = {2021},
-}</code></pre>
+    <pre><code>@misc{santana2016learningdrivingsimulator,
+      title={Learning a Driving Simulator}, 
+      author={Eder Santana and George Hotz},
+      year={2016},
+      eprint={1608.01230},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/1608.01230}, 
+}
+
+@misc{schafer2018commutedatacomma2k19dataset,
+      title={A Commute in Data: The comma2k19 Dataset}, 
+      author={Harald Schafer and Eder Santana and Andrew Haden and Riccardo Biasini},
+      year={2018},
+      eprint={1812.05752},
+      archivePrefix={arXiv},
+      primaryClass={cs.RO},
+      url={https://arxiv.org/abs/1812.05752}, 
+}
+
+@misc{goff2025learningdriveworldmodel,
+      title={Learning to Drive from a World Model}, 
+      author={Mitchell Goff and Greg Hogan and George Hotz and Armand du Parc Locmaria and Kacper Raczy and Harald Schäfer and Adeeb Shihadeh and Weixing Zhang and Yassine Yousfi},
+      year={2025},
+      eprint={2504.19077},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2504.19077}, 
+}
+
+
+@INPROCEEDINGS{9156412,
+  author={Caesar, Holger and Bankiti, Varun and Lang, Alex H. and Vora, Sourabh and Liong, Venice Erin and Xu, Qiang and Krishnan, Anush and Pan, Yu and Baldan, Giancarlo and Beijbom, Oscar},
+  booktitle={2020 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)}, 
+  title={nuScenes: A Multimodal Dataset for Autonomous Driving}, 
+  year={2020},
+  volume={},
+  number={},
+  pages={11618-11628},
+  keywords={Sensors;Laser radar;Three-dimensional displays;Cameras;Radar tracking;Autonomous vehicles},
+  doi={10.1109/CVPR42600.2020.01164}}
+
+
+
+@misc{chen2022level2autonomousdriving,
+      title={Level 2 Autonomous Driving on a Single Device: Diving into the Devils of Openpilot}, 
+      author={Li Chen and Tutian Tang and Zhitian Cai and Yang Li and Penghao Wu and Hongyang Li and Jianping Shi and Junchi Yan and Yu Qiao},
+      year={2022},
+      eprint={2206.08176},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2206.08176}, 
+}
+</code></pre>
   </div>
 </section>
 
